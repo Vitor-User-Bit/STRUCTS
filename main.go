@@ -1,28 +1,43 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+	var x int
+	var y int
+	var operacao string
+	var nome string
+func main (){
+		
+		fmt.Println("Digite seu nome: ")
+		fmt.Scan(&nome)
 
-func main() {
-	n1 := 10
-	n2 := n1
-	n3 := &n1
-	fmt.Println("\nPrimeiro número: ", n1)
-	fmt.Println("Copia do n1: ", n2)
-	fmt.Println("Ponteiro do primeiro número: ", n3)
-	fmt.Println("Ponteiro do primeiro número desreferenciado: ", *n3)
+		fmt.Println("--- SEJA BEM VINDO", nome, "---")
+		fmt.Println("Aqui está a sua calculadora :)")
 
-	n1 = 12
-	fmt.Println("\nPrimeiro número: ", n1)
-	fmt.Println("Copia do n1: ", n2)
-	fmt.Println("Ponteiro do primeiro número: ", n3)
-	fmt.Println("Ponteiro do primeiro número desreferenciado: ", *n3)
+		fmt.Println("Digite o primeiro número inteiro: ")
+		fmt.Scan(&x)
+		fmt.Println("Digite o segundo número inteiro: ")
+		fmt.Scan(&y)
+		fmt.Println("Escolha a operação desejada (+ - * /): ")
+		fmt.Scan(&operacao)
 
-	*n3 = 21 //Alterando valor de n1 através do ponteiro
-	fmt.Println("\nPrimeiro número: ", n1)
-	fmt.Println("Copia do n1: ", n2)
-	fmt.Println("Ponteiro do primeiro número: ", n3)
-	fmt.Println("Ponteiro do primeiro número desreferenciado: ", *n3)
-}
+		switch operacao {
+		case "+":
+			fmt.Println("Aqui está o resultado da sua operação", nome, ":\n", x + y)	
+		case "-":
+			fmt.Println("Aqui está o resultado da sua operação", nome, ":\n", x - y)	
+		case "*":
+			fmt.Println("Aqui está o resultado da sua operação", nome, ":\n", x * y)	
+		case "/":
+			if y == 0 || x == 0 {
+				fmt.Println("Impossivel dividir por zero!")
+			} else {
+				fmt.Println("Aqui está o resultado da sua operação", nome, ":\n", x/y)
+			}
+		}
+	}
 
-	
+			
+		
 
